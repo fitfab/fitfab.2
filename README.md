@@ -26,3 +26,7 @@
 ## add packages dependencies
 
 `lerna add @<scope>/<package_name> --scope=@<scope>/<package_name>`
+
+## Add builder to the other packages as a `dev` dependenciy
+
+`lerna add @fitfab/builder --dev --scope '{@fitfab/fitfab,@fitfab/button}'`

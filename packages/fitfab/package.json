@@ -17,6 +17,13 @@
     "access": "public"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "builder"
+  },
+  "dependencies": {
+    "@fitfab/button": "^0.0.0"
+  },
+  "devDependencies": {
+    "@fitfab/builder": "^0.0.0"
   }
 }
