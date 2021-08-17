@@ -49,7 +49,9 @@ lerna add @fitfab/button --scope=@fitfab/fitfab
 
 `lerna add @fitfab/builder --dev --scope '{@fitfab/fitfab,@fitfab/button}'`
 
-## Add other rollup, babel, etc... to `builder` package
+## Compile the JS with Rollup
+
+**Add rollup, babel, etc... to `builder` package**
 
 ```bash
 lerna add rollup --scope=@fitfab/builder
