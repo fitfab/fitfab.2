@@ -5,13 +5,13 @@
   "author": "Miguel Julio <fitfab@yahoo.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/fitfab.js",
+  "main": "src/fitfab.js",
   "directories": {
-    "lib": "lib",
+    "lib": "src",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "src"
   ],
   "publishConfig": {
     "access": "public"

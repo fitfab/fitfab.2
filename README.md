@@ -1,10 +1,16 @@
-# Lerna Project
+# fitfab ui library -- a lerna Project
+
+## After cloning this repo run the command below
+
+- `lerna bootstrap`
+
+## Setup documentation
 
 `npm init -y`
 
 `lerna init`
 
-## Modify Lerna.json
+### Modify Lerna.json
 
 ```json
 {
@@ -19,17 +25,17 @@
 }
 ```
 
-## create packages with lerna CMD
+### create packages with lerna CMD
 
 `lerna create @<scope>/<package_name> --yes`
 
-## add packages dependencies
+### add packages dependencies
 
 ref: https://github.com/lerna/lerna/tree/main/commands/add
 
 `lerna add @<scope>/<package_source> --scope=@<scope>/<package_target>`
 
-## Add React to packages
+### Add React to packages
 
 Add React as a dev dependency to the button
 
@@ -45,11 +51,11 @@ And add React as a peer dependency for consuming applications
 lerna add @fitfab/button --scope=@fitfab/fitfab
 ```
 
-## Add builder to the other packages as a `dev` dependenciy
+### Add builder to the other packages as a `dev` dependenciy
 
 `lerna add @fitfab/builder --dev --scope '{@fitfab/fitfab,@fitfab/button}'`
 
-## Compile the JS with Rollup
+### Compile the JS with Rollup
 
 **Add rollup, babel, etc... to `builder` package**
 

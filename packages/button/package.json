@@ -5,13 +5,13 @@
   "keywords": [],
   "author": "Miguel Julio <fitfab@yahoo.com>",
   "license": "ISC",
-  "main": "lib/button.js",
+  "main": "src/button.js",
   "directories": {
-    "lib": "lib",
+    "lib": "src",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "src"
   ],
   "publishConfig": {
     "access": "public"
