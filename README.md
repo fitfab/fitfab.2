@@ -25,8 +25,37 @@
 
 ## add packages dependencies
 
-`lerna add @<scope>/<package_name> --scope=@<scope>/<package_name>`
+ref: https://github.com/lerna/lerna/tree/main/commands/add
+
+`lerna add @<scope>/<package_source> --scope=@<scope>/<package_target>`
+
+## Add React to packages
+
+Add React as a dev dependency to the button
+
+`lerna add react --dev --scope='@fitfab/button'`
+
+And add React as a peer dependency for consuming applications
+
+`lerna add react --peer --scope='@fitfab/button'`
+
+**Add button to fitfab package**
+
+```bash
+lerna add @fitfab/button --scope=@fitfab/fitfab
+```
 
 ## Add builder to the other packages as a `dev` dependenciy
 
 `lerna add @fitfab/builder --dev --scope '{@fitfab/fitfab,@fitfab/button}'`
+
+## Add other rollup, babel, etc... to `builder` package
+
+```bash
+lerna add rollup --scope=@fitfab/builder
+lerna add @babel/core --scope=@fitfab/builder
+lerna add @babel/preset-env --scope=@fitfab/builder
+lerna add @babel/preset-react --scope=@fitfab/builder
+lerna add @rollup/plugin-babel --scope=@fitfab/builder
+lerna add @rollup/plugin-node-resolve --scope=@fitfab/builder
+```

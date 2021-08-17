@@ -1,7 +1,1 @@
-'use strict';
-
-module.exports = fitfab;
-
-function fitfab() {
-    // TODO
-}
+export * from "@fitfab/button";
