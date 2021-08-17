@@ -1,7 +1,7 @@
 {
   "name": "@fitfab/fitfab",
   "version": "0.0.1-alpha.0",
-  "description": "> TODO: description",
+  "description": "Hold all the packages together in case someone wants to do a single import.",
   "author": "Miguel Julio <fitfab@yahoo.com>",
   "homepage": "",
   "license": "ISC",

@@ -1,11 +1,11 @@
 # `@fitfab/button`
 
-> TODO: description
+A button component
 
 ## Usage
 
 ```
-const button = require('@fitfab/button');
+import { Button } = from '@fitfab/button';
 
-// TODO: DEMONSTRATE API
+<Button>click</Button>
 ```

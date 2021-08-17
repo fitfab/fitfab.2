@@ -1,11 +1,13 @@
 # `@fitfab/builder`
 
-> TODO: description
+This is the Rollup build script that compile all packages
 
 ## Usage
 
-```
-const builder = require('@fitfab/builder');
+This is used by the other packages and it's called from within the `package.json`
 
-// TODO: DEMONSTRATE API
+```json
+script: {
+"build": "builder"
+}
 ```
