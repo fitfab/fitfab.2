@@ -1,3 +1,5 @@
 node_modules
 
+# Genreate by code.
 dist
+*.log
