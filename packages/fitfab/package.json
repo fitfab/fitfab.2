@@ -1,6 +1,6 @@
 {
   "name": "@fitfab/fitfab",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "description": "Hold all the packages together in case someone wants to do a single import.",
   "author": "Miguel Julio <fitfab@yahoo.com>",
   "homepage": "",
@@ -21,9 +21,9 @@
     "build": "builder"
   },
   "dependencies": {
-    "@fitfab/button": "^0.0.1-alpha.0"
+    "@fitfab/button": "^0.0.1-alpha.1"
   },
   "devDependencies": {
-    "@fitfab/builder": "^0.0.1-alpha.0"
+    "@fitfab/builder": "^0.0.1-alpha.1"
   }
 }
