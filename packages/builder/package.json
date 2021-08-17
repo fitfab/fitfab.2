@@ -5,20 +5,20 @@
   "keywords": [],
   "author": "Miguel Julio <fitfab@yahoo.com>",
   "license": "ISC",
-  "main": "lib/builder.js",
+  "main": "src/builder.js",
   "directories": {
-    "lib": "lib",
+    "lib": "src",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "src"
   ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {},
   "bin": {
-    "builder": "./lib/builder.js"
+    "builder": "./src/builder.js"
   },
   "dependencies": {
     "@babel/core": "^7.15.0",
