@@ -61,3 +61,7 @@ lerna add @babel/preset-react --scope=@fitfab/builder
 lerna add @rollup/plugin-babel --scope=@fitfab/builder
 lerna add @rollup/plugin-node-resolve --scope=@fitfab/builder
 ```
+
+Now you run the build CMD
+
+`npm run build`
