@@ -1,11 +1,12 @@
 # `@fitfab/fitfab`
 
-> TODO: description
+Hold all the packages together in case someone wants to do a single import.
 
 ## Usage
 
-```
-const fitfab = require('@fitfab/fitfab');
+```JSX
+import { Button } = from '@fitfab/fitfab';
 
-// TODO: DEMONSTRATE API
+<Button>hello</Button>
+
 ```

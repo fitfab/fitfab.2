@@ -1,5 +1,9 @@
 node_modules
 
-# Genreate by code.
+# Generate by code.
 dist
 *.log
+
+# Remove .env files
+.env
+.env.local 
