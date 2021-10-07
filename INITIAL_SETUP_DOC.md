@@ -65,3 +65,30 @@ lerna add @rollup/plugin-node-resolve --scope=@fitfab/builder
 Now you run the build CMD
 
 `npm run build`
+
+## Storybook setup
+
+### Install Storybook
+
+`npx sb init --type react`
+
+- remove the `stories` folder
+
+  `rm -rf stories/`
+
+- Update the `.storybook/main.js` file
+
+  ```js
+  module.exports = {
+    stories: ["../packages/**/*.stories.js"],
+    addons: ["@storybook/addon-actions", "@storybook/addon-links"],
+  };
+  ```
+
+**!important**: Run this Command `npx lerna bootstrap`
+
+### Create a Storybook Story
+
+```js
+
+```
