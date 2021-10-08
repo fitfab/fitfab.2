@@ -26,11 +26,17 @@ const inputOptions = {
       extensions: EXTENSIONS,
       presets: [
         "@babel/preset-typescript",
-        "@babel/preset-env",
+        [
+          "@babel/preset-env",
+          {
+            targets: "> 0.25%, not dead",
+          },
+        ],
         "@babel/preset-react",
       ],
       babelHelpers: "bundled",
       include: EXTENSIONS.map((ext) => `src/**/*${ext}`),
+      plugins: [],
     }),
   ],
 };
@@ -38,6 +44,7 @@ const inputOptions = {
 const outputOptions = [
   {
     dir: path.join(currentWorkingPath, "dist"), // Use dir when "preserveModules" is set to true
+    entryFileNames: "[name].esm.js",
     format: "esm",
     preserveModules: true, // This one is important for treeshaking
   },

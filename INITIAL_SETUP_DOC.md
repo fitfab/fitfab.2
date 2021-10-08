@@ -58,18 +58,24 @@ npx lerna add @fitfab/button --scope=@fitfab/fitfab
 **Add rollup, babel, etc... to `builder` package**
 
 ```bash
-lerna add rollup --scope=@fitfab/builder
-lerna add @babel/core --scope=@fitfab/builder
-lerna add @babel/preset-env --scope=@fitfab/builder
-lerna add @babel/preset-react --scope=@fitfab/builder
-lerna add @rollup/plugin-babel --scope=@fitfab/builder
-lerna add @rollup/plugin-node-resolve --scope=@fitfab/builder
+npx lerna add rollup --scope=@fitfab/builder
+npx lerna add @babel/core --scope=@fitfab/builder
+npx lerna add @babel/preset-env --scope=@fitfab/builder
+npx lerna add @babel/preset-react --scope=@fitfab/builder
+npx lerna add @rollup/plugin-babel --scope=@fitfab/builder
+npx lerna add @rollup/plugin-node-resolve --scope=@fitfab/builder
 
 # add typescript preset to transpile ts to js
-lerna add @babel/preset-typescript --scope=@fitfab/builder
+npx lerna add @babel/preset-typescript --scope=@fitfab/builder
 # also add these peer dependencies typescript and tslib
-lerna add typescript --peer --scope=@fitfab/builder
-lerna add tslib --peer --scope=@fitfab/builder
+npx lerna add typescript --peer --scope=@fitfab/builder
+npx lerna add tslib --peer --scope=@fitfab/builder
+```
+
+```bash
+# These are included in the @babel/preset-env
+"@babel/proposal-class-properties"
+"@babel/proposal-object-rest-spread"
 ```
 
 Now you run the build CMD
