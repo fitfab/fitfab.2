@@ -6,7 +6,7 @@
 
 ### Modify Lerna.json
 
-```json
+```js
 {
   "packages": ["packages/*"],
   "version": "0.0.0",
