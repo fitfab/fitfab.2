@@ -5,25 +5,24 @@
   "author": "Miguel Julio <fitfab@yahoo.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "src/fitfab.js",
-  "directories": {
-    "lib": "src",
-    "test": "__tests__"
-  },
-  "files": [
-    "src"
-  ],
+  "main": "src/fitfab.ts",
+  "types": "dist",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
+    "prebuild": "tsc --emitDeclarationOnly",
     "build": "builder"
   },
   "dependencies": {
     "@fitfab/button": "^0.0.1-alpha.2"
   },
   "devDependencies": {
-    "@fitfab/builder": "^0.0.1-alpha.1"
+    "@fitfab/builder": "^0.0.1-alpha.1",
+    "@types/react": "^17.0.27",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.4.3"
   }
 }
