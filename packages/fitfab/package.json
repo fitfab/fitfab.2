@@ -6,18 +6,13 @@
   "homepage": "",
   "license": "ISC",
   "main": "src/fitfab.ts",
-  "directories": {
-    "lib": "src",
-    "test": "__tests__"
-  },
-  "files": [
-    "src"
-  ],
+  "types": "dist",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
+    "prebuild": "tsc --emitDeclarationOnly",
     "build": "builder"
   },
   "dependencies": {

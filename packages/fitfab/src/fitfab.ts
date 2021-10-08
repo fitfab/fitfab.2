@@ -1,1 +1,1 @@
-export * from "@fitfab/button/dist/button";
+export * from "@fitfab/button/src/button";

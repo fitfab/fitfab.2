@@ -44,7 +44,7 @@ const inputOptions = {
 const outputOptions = [
   {
     dir: path.join(currentWorkingPath, "dist"), // Use dir when "preserveModules" is set to true
-    entryFileNames: "[name].esm.js",
+    entryFileNames: "[name].js",
     format: "esm",
     preserveModules: true, // This one is important for treeshaking
   },
@@ -55,8 +55,8 @@ async function build() {
   const bundle = await rollup.rollup(inputOptions);
   // loop through the options and write individual bundles
   outputOptions.forEach(async (options) => {
-    console.log("options: ", options);
     await bundle.write(options);
+    console.log("> ------------------------");
   });
 }
 
