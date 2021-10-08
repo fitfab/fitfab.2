@@ -78,9 +78,49 @@ npx lerna add tslib --peer --scope=@fitfab/builder
 "@babel/proposal-object-rest-spread"
 ```
 
+### Typescript setup
+
+```bash
+# This "tsconfig.json" is at the root of the monorepo
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "types": ["node"]
+  }
+}
+```
+
+```bash
+# This tsconfig.json is on every pakage and it extends the root tsconfig.json
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "./dist"
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
+```
+
 Now you run the build CMD
 
 `npm run build`
+
+### Typescript setup
 
 _Resources about babel & Typescript_:
 
