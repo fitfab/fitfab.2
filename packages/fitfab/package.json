@@ -5,7 +5,7 @@
   "author": "Miguel Julio <fitfab@yahoo.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "src/fitfab.js",
+  "main": "src/fitfab.ts",
   "directories": {
     "lib": "src",
     "test": "__tests__"
@@ -24,6 +24,10 @@
     "@fitfab/button": "^0.0.1-alpha.2"
   },
   "devDependencies": {
-    "@fitfab/builder": "^0.0.1-alpha.1"
+    "@fitfab/builder": "^0.0.1-alpha.1",
+    "@types/react": "^17.0.27",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.4.3"
   }
 }
