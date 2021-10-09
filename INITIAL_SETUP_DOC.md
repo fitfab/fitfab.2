@@ -126,8 +126,6 @@ Now you run the build CMD
 
 `npm run build`
 
-### Typescript setup
-
 _Resources about babel & Typescript_:
 
 - https://www.typescriptlang.org/docs/handbook/babel-with-typescript.html
@@ -135,3 +133,45 @@ _Resources about babel & Typescript_:
 - https://github.com/tsconfig/bases
 - https://github.com/kraftdorian/react-ts-rollup-starter-lib
 - https://github.com/andyjessop/monorepo-starter-kit
+
+### Styled-components setup
+
+Dependency installation:
+
+```bash
+# styled-components & types
+npx lerna add styled-components --dev --scope=@fitfab/button
+npx lerna add @types/styled-components --dev --scope=@fitfab/button
+
+# Babel plugin for styled-components
+npx lerna add babel-plugin-styled-components --dev --scope=@fitfab/button
+
+# Add styled-components as peerdependencies to package.json
+npx lerna add styled-components --peer --scope=@fitfab/button
+```
+
+add plugin to babel in the builder package
+
+```js
+// builer.js file
+ plugins: [
+    "@babel/plugin-transform-runtime",
+    "babel-plugin-styled-components", // styled-components plugin
+  ],
+```
+
+ERROR: When run the build command, the following error is thrown:
+
+```bash
+"Error: 'typeOf' is not exported by ../../node_modules/react-is/index.js, imported by ../../node_modules/styled-components/dist/styled-components.esm.js"
+
+```
+
+SOLUTION: As per StackOverflow:
+
+`https://stackoverflow.com/questions/50080893/rollup-error-isvalidelementtype-is-not-exported-by-node-modules-react-is-inde`
+
+```bash
+# add styled-components to the external inputOptions for rollup
+external: ["react", "react-dom", /@babel\/runtime/, "styled-components"],
+```
