@@ -29,7 +29,7 @@ const inputOptions = {
    * Tell Rollup to treat the helpers imported from within the @babel/runtime module
    * as external dependencies when bundling for cjs & es formats.
    */
-  external: ["react", "react-dom", /@babel\/runtime/],
+  external: ["react", "react-dom", /@babel\/runtime/, "styled-components"],
   plugins: [
     resolve(),
     babel({
@@ -48,7 +48,10 @@ const inputOptions = {
       include: EXTENSIONS.map((ext) => `src/**/*${ext}`),
       // Important! when "babelHelpers" is seet to "runtime"
       // use the "@babel/plugin-transform-runtime"
-      plugins: ["@babel/plugin-transform-runtime"],
+      plugins: [
+        "babel-plugin-styled-components",
+        "@babel/plugin-transform-runtime",
+      ],
     }),
   ],
 };
