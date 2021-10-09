@@ -134,3 +134,4 @@ _Resources about babel & Typescript_:
 - https://iamturns.com/typescript-babel/
 - https://github.com/tsconfig/bases
 - https://github.com/kraftdorian/react-ts-rollup-starter-lib
+- https://github.com/andyjessop/monorepo-starter-kit

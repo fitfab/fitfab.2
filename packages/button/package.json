@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "prebuild": "tsc --emitDeclarationOnly",
+    "postbuild": "tsc --emitDeclarationOnly",
     "build": "builder"
   },
   "devDependencies": {
