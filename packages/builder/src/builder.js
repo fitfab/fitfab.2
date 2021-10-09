@@ -2,13 +2,15 @@
 
 const rollup = require("rollup");
 const path = require("path");
+const rimraf = require("rimraf");
 const resolve = require("@rollup/plugin-node-resolve").default;
 const babel = require("@rollup/plugin-babel").default;
 
 const currentWorkingPath = process.cwd();
 const { main, name } = require(path.join(currentWorkingPath, "package.json"));
+const OUTDIR = path.join(currentWorkingPath, "dist");
 
-const inputPath = path.join(currentWorkingPath, main);
+const INPUTPATH = path.join(currentWorkingPath, main);
 
 // Little workaround to get package name without scope
 const fileName = name.replace("@fitfab/", "");
@@ -18,7 +20,7 @@ const EXTENSIONS = [".ts", ".tsx"];
 
 // see below for details on the options
 const inputOptions = {
-  input: inputPath,
+  input: INPUTPATH,
   /**
    * NOTE: "@babel/runtime" from https://www.npmjs.com/package/@rollup/plugin-babel
    * 'runtime' - you should use this especially when building libraries with Rollup.
@@ -53,20 +55,26 @@ const inputOptions = {
 
 const outputOptions = [
   {
-    dir: path.join(currentWorkingPath, "dist"), // Use dir when "preserveModules" is set to true
-    entryFileNames: "[name].js",
+    dir: OUTDIR, // Use dir when "preserveModules" is set to true
+    entryFileNames: `${fileName}.js`,
     format: "esm",
     preserveModules: true, // This one is important for treeshaking
   },
 ];
 
 async function build() {
+  // Clean dist folder
+  await rimraf(OUTDIR, {}, (err) => {
+    if (err) {
+      console.error(err);
+    }
+  });
+
   // create bundle
   const bundle = await rollup.rollup(inputOptions);
   // loop through the options and write individual bundles
   outputOptions.forEach(async (options) => {
     await bundle.write(options);
-    console.log("> ------------------------");
   });
 }
 
