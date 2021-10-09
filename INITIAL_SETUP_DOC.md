@@ -78,6 +78,12 @@ npx lerna add tslib --peer --scope=@fitfab/builder
 "@babel/proposal-object-rest-spread"
 ```
 
+```bash
+# Using babel with the option [babelHelpers: "runtime"], you need to add this plugin
+# https://babeljs.io/docs/en/babel-plugin-transform-runtime
+npx lerna add @babel/plugin-transform-runtime --dev --scope=@fitfab/builder
+```
+
 ### Typescript setup
 
 ```bash

@@ -19,7 +19,15 @@ const EXTENSIONS = [".ts", ".tsx"];
 // see below for details on the options
 const inputOptions = {
   input: inputPath,
-  external: ["react", "react-dom"],
+  /**
+   * NOTE: "@babel/runtime" from https://www.npmjs.com/package/@rollup/plugin-babel
+   * 'runtime' - you should use this especially when building libraries with Rollup.
+   * It has to be used in combination with @babel/plugin-transform-runtime and
+   * you should also specify @babel/runtime as dependency of your package.
+   * Tell Rollup to treat the helpers imported from within the @babel/runtime module
+   * as external dependencies when bundling for cjs & es formats.
+   */
+  external: ["react", "react-dom", /@babel\/runtime/],
   plugins: [
     resolve(),
     babel({
@@ -34,9 +42,11 @@ const inputOptions = {
         ],
         "@babel/preset-react",
       ],
-      babelHelpers: "bundled",
+      babelHelpers: "runtime", // Recommended when using with Rollup
       include: EXTENSIONS.map((ext) => `src/**/*${ext}`),
-      plugins: [],
+      // Important! when "babelHelpers" is seet to "runtime"
+      // use the "@babel/plugin-transform-runtime"
+      plugins: ["@babel/plugin-transform-runtime"],
     }),
   ],
 };
