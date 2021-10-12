@@ -7,10 +7,10 @@ const resolve = require("@rollup/plugin-node-resolve").default;
 const babel = require("@rollup/plugin-babel").default;
 
 const currentWorkingPath = process.cwd();
-const { main, name } = require(path.join(currentWorkingPath, "package.json"));
+const { src, name } = require(path.join(currentWorkingPath, "package.json"));
 const OUTDIR = path.join(currentWorkingPath, "dist");
 
-const INPUTPATH = path.join(currentWorkingPath, main);
+const INPUTPATH = path.join(currentWorkingPath, src);
 
 // Little workaround to get package name without scope
 const fileName = name.replace("@fitfab/", "");
