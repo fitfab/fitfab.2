@@ -7,6 +7,7 @@
   "license": "ISC",
   "main": "dist/fitfab.js",
   "module": "dist/fitfab.js",
+  "src": "src/fitfab.ts",
   "types": "dist",
   "directories": {
     "lib": "src"
