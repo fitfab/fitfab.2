@@ -1,6 +1,6 @@
 {
   "name": "@fitfab/fitfab",
-  "version": "0.0.1-alpha.2",
+  "version": "0.1.0",
   "description": "Hold all the packages together in case someone wants to do a single import.",
   "author": "Miguel Julio <fitfab@yahoo.com>",
   "homepage": "",
@@ -16,10 +16,10 @@
     "build": "builder"
   },
   "dependencies": {
-    "@fitfab/button": "^0.0.1-alpha.2"
+    "@fitfab/button": "^0.1.0"
   },
   "devDependencies": {
-    "@fitfab/builder": "^0.0.1-alpha.1",
+    "@fitfab/builder": "^0.1.0",
     "@types/react": "^17.0.27",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
