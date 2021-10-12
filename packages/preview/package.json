@@ -1,6 +1,6 @@
 {
   "name": "@fitfab/preview",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
   "keywords": [],
   "author": "Miguel Julio <fitfab@yahoo.com>",
@@ -39,6 +39,6 @@
     "babel-loader": "^8.2.2"
   },
   "dependencies": {
-    "@fitfab/button": "^0.1.1"
+    "@fitfab/button": "^0.1.2"
   }
 }
