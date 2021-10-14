@@ -13,7 +13,7 @@ export interface ButtonProps {
 }
 const ButtonStyles = styled.button<ButtonProps>`
   background-color: ${(props) =>
-    props.variant === "primary" ? "#212121" : "#505050"};
+    props.variant === "primary" ? "#212121" : "#626262"};
   color: #fff;
   font-size: 1rem;
   padding: 9px 24px;
@@ -21,10 +21,18 @@ const ButtonStyles = styled.button<ButtonProps>`
   border-radius: 16px;
   cursor: pointer;
   transition: all 0.3s ease-in;
+  outline-offset: -2px;
+  outline: 1px solid #fff;
   &:hover {
-    background-color: #ff4158;
+    background-color: ${(props) =>
+      props.variant === "primary" ? "#ff4158" : "#333"};
     outline-offset: 1px;
-    outline: 4px solid rgba(258, 65, 106, 0.3);
+    /*rgba(258, 65, 106, 0.3);*/
+    outline: 4px solid
+      ${(props) =>
+        props.variant === "primary"
+          ? "rgba(258, 65, 106, 0.3)"
+          : "rgba(0, 0, 0, 0.3)"};
   }
 `;
 
