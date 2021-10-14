@@ -7,3 +7,6 @@ dist
 # Remove .env files
 .env
 .env.local 
+
+# npmrc
+.npmrc
