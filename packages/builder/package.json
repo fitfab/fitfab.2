@@ -1,6 +1,6 @@
 {
   "name": "@fitfab/builder",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "The Rollup build script -- A Builder of all components, centralizes rollup, babel, post-css, etc.",
   "keywords": [],
   "author": "Miguel Julio <fitfab@yahoo.com>",
