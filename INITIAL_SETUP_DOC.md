@@ -205,3 +205,21 @@ external: ["react", "react-dom", /@babel\/runtime/, "styled-components"],
   ...
 }
 ```
+
+### Storybook setup
+
+```bash
+# install storybook
+npx -p @storybook/cli sb init --type react
+
+# update .storybook/main.js to point to the packages stories.
+module.exports = {
+  stories: [
+    "../packages/**/*.stories.mdx",
+    "../packages/**/*.stories.@(js|jsx|ts|tsx)",
+  ],
+  addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
+};
+```
+
+Create a story in the packages folder: [sample](./packages/button/src/button.stories.mdx)
