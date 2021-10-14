@@ -13,7 +13,6 @@
     "lib": "src"
   },
   "files": [
-    "src",
     "dist"
   ],
   "publishConfig": {
