@@ -21,6 +21,6 @@ const ButtonStyles = styled.button`
 export interface ButtonProps {
   children?: React.ReactNode;
 }
-export const Button = ({ children }: ButtonProps) => (
-  <ButtonStyles>{children}</ButtonStyles>
+export const Button = ({ children, ...rest }: ButtonProps) => (
+  <ButtonStyles {...rest}>{children}</ButtonStyles>
 );

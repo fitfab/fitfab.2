@@ -1,7 +1,6 @@
 {
-  "name": "@fitfab/root",
-  "version": "1.0.0",
-  "private": true,
+  "name": "root",
+  "version": "1.0.3",
   "workspaces": [
     "packages/*"
   ],
