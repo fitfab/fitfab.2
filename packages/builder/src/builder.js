@@ -44,14 +44,9 @@ const inputOptions = {
         ],
         "@babel/preset-react",
       ],
-      babelHelpers: "runtime", // Recommended when using with Rollup
+      babelHelpers: "bundled",
       include: EXTENSIONS.map((ext) => `src/**/*${ext}`),
-      // Important! when "babelHelpers" is seet to "runtime"
-      // use the "@babel/plugin-transform-runtime"
-      plugins: [
-        "babel-plugin-styled-components",
-        "@babel/plugin-transform-runtime",
-      ],
+      plugins: ["babel-plugin-styled-components"],
     }),
   ],
 };
