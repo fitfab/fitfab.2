@@ -1,0 +1,43 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from "@storybook/addon-docs";
+import { Button } from "./Button";
+
+<Meta
+  title="Component/Button"
+  component={Button}
+  argTypes={{
+    children: { control: "text" },
+    variant: { control: { type: "select", options: ["primary", "secondary"] } },
+  }}
+/>
+
+Here's some _markdown_!
+
+## Button Usage
+
+```jsx
+import { Button } from "@/fitfab/Button";
+
+<Button variant="primary">Primary button</Button>;
+```
+
+## Button Preview
+
+<Canvas>
+  <Story
+    name="Primary"
+    args={{ children: "Primary button", variant: "primary" }}
+  >
+    {(args) => <Button {...args}>{args.children}</Button>}
+  </Story>
+  <p>helllo</p>
+  <Story
+    name="Secondary"
+    args={{ children: "Secondary button", variant: "secondary" }}
+  >
+    {(args) => <Button {...args}>{args.children}</Button>}
+  </Story>
+</Canvas>
+
+## Button Props
+
+<ArgsTable of={Button} />
