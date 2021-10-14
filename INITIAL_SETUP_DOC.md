@@ -175,3 +175,33 @@ SOLUTION: As per StackOverflow:
 # add styled-components to the external inputOptions for rollup
 external: ["react", "react-dom", /@babel\/runtime/, "styled-components"],
 ```
+
+### Setup yarn workspaces
+
+```bash
+# lerna.json
+{
+  "packages": ["packages/*"],
+  "npmClient": "yarn",    # use yarn instead of npm
+  "useWorkspaces": true,  # use workspaces
+  "version": "0.1.2",
+  # "hoist": true,        --hoist is not supported with --npm-client=yarn, use yarn workspaces instead
+  "stream": true,
+  "bootstrap": {
+    "npmClientArgs": ["--no-package-lock"]
+  }
+}
+
+# root package.json
+{
+  "name": "@fitfab/root",
+  "version": "1.0.0",
+  "private": true,  # Required for lerna to work
+  "workspaces": [   # Enables yarn workspaces
+    "packages/*"
+  ],
+  "description": "A library UI",
+  "main": "index.js",
+  ...
+}
+```
