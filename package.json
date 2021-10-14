@@ -1,6 +1,10 @@
 {
-  "name": "@fitfab/fitfab",
+  "name": "@fitfab/root",
   "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "description": "A library UI",
   "main": "index.js",
   "scripts": {
