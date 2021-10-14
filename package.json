@@ -7,10 +7,9 @@
     "test": "echo \"TODO: add jest and tests\"",
     "build": "lerna run build",
     "boot": "lerna bootstrap",
-    "dev": "lerna run dev",
-    "ver": "lerna version",
-    "pub": "lerna publish",
-    "storybook": "start-storybook -p 6006",
+    "version": "lerna version",
+    "publish": "lerna publish",
+    "dev": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "keywords": [],
