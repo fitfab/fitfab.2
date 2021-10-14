@@ -206,6 +206,10 @@ external: ["react", "react-dom", /@babel\/runtime/, "styled-components"],
 }
 ```
 
+Note: after setting yarn, I could not publish to NPM.
+
+I have to use the `npx lerna publish from-git --no-verify-access` command.
+
 ### Storybook setup
 
 ```bash
