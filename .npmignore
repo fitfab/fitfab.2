@@ -1,0 +1,7 @@
+src
+*.stories.mdx
+*.stories.md
+*.stories.tsx
+*.stories.ts
+*.stories.jsx
+*.stories.js
