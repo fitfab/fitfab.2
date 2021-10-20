@@ -13,7 +13,7 @@ export interface ButtonProps {
 }
 const ButtonStyles = styled.button<ButtonProps>`
   background-color: ${(props) =>
-    props.variant === "primary" ? "#212121" : "#626262"};
+    props.variant === "primary" ? "#212121" : "#979797"};
   color: #fff;
   font-size: 1rem;
   padding: 9px 24px;
