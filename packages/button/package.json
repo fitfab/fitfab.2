@@ -1,6 +1,6 @@
 {
   "name": "@fitfab/button",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Button component",
   "keywords": [],
   "author": "Miguel Julio <fitfab@yahoo.com>",
@@ -24,7 +24,7 @@
     "build": "builder"
   },
   "devDependencies": {
-    "@fitfab/builder": "^0.2.2",
+    "@fitfab/builder": "^0.2.3",
     "@types/react": "^17.0.27",
     "@types/styled-components": "^5.1.15",
     "babel-plugin-styled-components": "^1.13.2",
