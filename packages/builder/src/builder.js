@@ -4,7 +4,7 @@ const rollup = require("rollup");
 const path = require("path");
 const rimraf = require("rimraf");
 const resolve = require("@rollup/plugin-node-resolve").default;
-const babel = require("@rollup/plugin-babel").default;
+const esbuild = require("rollup-plugin-esbuild");
 
 const currentWorkingPath = process.cwd();
 const { src, name } = require(path.join(currentWorkingPath, "package.json"));
@@ -32,21 +32,29 @@ const inputOptions = {
   external: ["react", "react-dom", "@babel/runtime", "styled-components"],
   plugins: [
     resolve(),
-    babel({
-      extensions: EXTENSIONS,
-      presets: [
-        "@babel/preset-typescript",
-        [
-          "@babel/preset-env",
-          {
-            targets: "> 0.25%, not dead",
-          },
-        ],
-        "@babel/preset-react",
-      ],
-      babelHelpers: "bundled",
-      include: EXTENSIONS.map((ext) => `src/**/*${ext}`),
-      plugins: ["babel-plugin-styled-components"],
+    esbuild({
+      // All options are optional
+      include: /\.[jt]sx?$/, // default, inferred from `loaders` option
+      exclude: /node_modules/, // default
+      sourceMap: false, // default
+      // minify: process.env.NODE_ENV === 'production',
+      target: "esnext", // default, or 'es20XX', 'esnext'
+      jsx: "transform", // default, or 'preserve'
+      jsxFactory: "React.createElement",
+      jsxFragment: "React.Fragment",
+      // Like @rollup/plugin-replace
+      define: {
+        __VERSION__: '"x.y.z"',
+      },
+      tsconfig: "tsconfig.json", // default
+      // Add extra loaders
+      loaders: {
+        // Add .json files support
+        // require @rollup/plugin-commonjs
+        ".json": "json",
+        // Enable JSX in .js files too
+        ".js": "jsx",
+      },
     }),
   ],
 };
