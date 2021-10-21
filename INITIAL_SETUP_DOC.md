@@ -226,3 +226,7 @@ module.exports = {
 ```
 
 Create a story in the packages folder: [sample](./packages/button/src/button.stories.mdx)
+
+### add eslint, and other stuff to the monorepo:
+
+https://medium.com/rewrite-tech/how-to-create-a-monorepo-with-lerna-3ed6dfec5021
