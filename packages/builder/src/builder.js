@@ -21,15 +21,7 @@ const EXTENSIONS = [".ts", ".tsx"];
 // see below for details on the options
 const inputOptions = {
   input: INPUTPATH,
-  /**
-   * NOTE: "@babel/runtime" from https://www.npmjs.com/package/@rollup/plugin-babel
-   * 'runtime' - you should use this especially when building libraries with Rollup.
-   * It has to be used in combination with @babel/plugin-transform-runtime and
-   * you should also specify @babel/runtime as dependency of your package.
-   * Tell Rollup to treat the helpers imported from within the @babel/runtime module
-   * as external dependencies when bundling for cjs & es formats.
-   */
-  external: ["react", "react-dom", "@babel/runtime", "styled-components"],
+  external: ["react", "react-dom", "styled-components"],
   plugins: [
     resolve(),
     esbuild({
@@ -55,6 +47,7 @@ const inputOptions = {
         // Enable JSX in .js files too
         ".js": "jsx",
       },
+      plugins: [],
     }),
   ],
 };
