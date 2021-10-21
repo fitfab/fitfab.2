@@ -18,16 +18,15 @@ const ButtonStyles = styled.button<ButtonProps>`
   font-size: 1rem;
   padding: 9px 24px;
   border: none;
-  border-radius: 16px;
+  border-radius: 32px;
   cursor: pointer;
   transition: all 0.3s ease-in;
-  outline-offset: -2px;
-  outline: 1px solid #fff;
+  outline-offset: 1px;
+  outline: 1px solid
+    ${(props) => (props.variant === "primary" ? "#212121" : "#979797")};
   &:hover {
     background-color: ${(props) =>
       props.variant === "primary" ? "#ff4158" : "#333"};
-    outline-offset: 1px;
-    /*rgba(258, 65, 106, 0.3);*/
     outline: 4px solid
       ${(props) =>
         props.variant === "primary"
