@@ -5,9 +5,9 @@
   "author": "Miguel Julio <fitfab@yahoo.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "dist/fitfab.js",
-  "module": "dist/fitfab.js",
-  "src": "src/fitfab.ts",
+  "main": "./dist/fitfab.js",
+  "module": "./dist/fitfab.js",
+  "src": "./src/fitfab.ts",
   "types": "dist",
   "directories": {
     "lib": "src"
@@ -17,6 +17,11 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/fitfab.js"
+    }
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

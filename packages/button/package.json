@@ -5,10 +5,10 @@
   "keywords": [],
   "author": "Miguel Julio <fitfab@yahoo.com>",
   "license": "ISC",
-  "main": "dist/button.js",
-  "module": "dist/button.js",
-  "src": "src/button.tsx",
-  "types": "dist",
+  "main": "./dist/button.js",
+  "module": "./dist/button.js",
+  "src": "./src/button.tsx",
+  "types": "./dist",
   "directories": {
     "lib": "src"
   },
@@ -17,6 +17,11 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/button.js"
+    }
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
