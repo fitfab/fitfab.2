@@ -21,7 +21,7 @@
     }
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.com/"
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -38,5 +38,6 @@
   "homepage": "https://github.com/fitfab/fitfab.2#readme",
   "devDependencies": {
     "@fitfab/builder": "^0.3.0"
-  }
+  },
+  "gitHead": "d4dde49d60e9e47168ba6f9ede8218e7bdd88962"
 }
