@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"TODO: add jest and tests\"",
-    "build": "lerna run build",
-    "boot": "lerna bootstrap",
-    "version": "lerna version",
-    "publish": "lerna publish",
+    "build": "lerna run build --stream",
+    "boot": "lerna bootstrap --stream",
+    "version": "lerna version --stream",
+    "publish": "lerna publish --stream",
     "dev": "start-storybook -p 6006",
     "build:storybook": "build-storybook"
   },
