@@ -17,7 +17,7 @@ export interface CarouselProps {
 }
 
 export const Carousel = ({
-  children = "Place your content here",
+  children = "Place content here",
   width = "100%",
   height = "320px",
 }: CarouselProps) => {
