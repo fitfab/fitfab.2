@@ -8,7 +8,7 @@
     "build": "lerna run build --stream",
     "boot": "lerna bootstrap",
     "version": "lerna version",
-    "publish": "lerna publish",
+    "pub": "lerna publish",
     "dev": "start-storybook -p 6006",
     "build:storybook": "build-storybook"
   },
