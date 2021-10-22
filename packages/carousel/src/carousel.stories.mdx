@@ -1,0 +1,49 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from "@storybook/addon-docs";
+import { Carousel } from "./carousel";
+import data from "./mocks/data";
+
+<Meta title="Component/Carousel" component={Carousel} />
+
+## Carousel Preview: Default
+
+The default Carousel render at **100% width** and **height at 320px**.
+
+<Canvas>
+  <Story name="Default">
+    <Carousel>
+      {data.map((item, index) => (
+        <div key={index}>
+          <img src={item.src} alt={item.alt} />
+        </div>
+      ))}
+    </Carousel>
+  </Story>
+</Canvas>
+
+## Carousel Preview: with props
+
+The Carousel render with **780px width** and the default **height at 320px**.
+
+<Canvas>
+  <Story name="Custom width">
+    <Carousel width="780px">
+      {data.map((item, index) => (
+        <img key={index} src={item.src} alt={item.alt} />
+      ))}
+    </Carousel>
+  </Story>
+</Canvas>
+
+## Carousel Usage
+
+```jsx
+import { Carousel } from "@/fitfab/Carousel";
+
+<Carouse>
+  <div>some content here</div>
+</Carouse>;
+```
+
+## Carosel Props
+
+<ArgsTable of={Carousel} />

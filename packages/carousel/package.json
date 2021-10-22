@@ -1,0 +1,42 @@
+{
+  "name": "@fitfab/carousel",
+  "version": "0.2.6",
+  "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
+  "keywords": [],
+  "author": "Miguel Julio <fitfab@yahoo.com>",
+  "license": "ISC",
+  "main": "./dist/carousel.js",
+  "module": "./dist/carousel.js",
+  "src": "./src/carousel.tsx",
+  "types": "./dist",
+  "directories": {
+    "lib": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/carousel.js"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fitfab/fitfab.2.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "postbuild": "tsc --emitDeclarationOnly",
+    "build": "builder"
+  },
+  "bugs": {
+    "url": "https://github.com/fitfab/fitfab.2/issues"
+  },
+  "homepage": "https://github.com/fitfab/fitfab.2#readme",
+  "devDependencies": {
+    "@fitfab/builder": "^0.2.6"
+  }
+}

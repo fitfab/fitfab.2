@@ -29,7 +29,8 @@
     "build": "builder"
   },
   "dependencies": {
-    "@fitfab/button": "^0.2.6"
+    "@fitfab/button": "^0.2.6",
+    "@fitfab/carousel": "^0.2.6"
   },
   "devDependencies": {
     "@fitfab/builder": "^0.2.6",
