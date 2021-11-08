@@ -34,7 +34,14 @@ const ButtonStyles = styled.button<ButtonProps>`
           : "rgba(0, 0, 0, 0.3)"};
   }
 `;
+// NOTE: do i need React.componentPropsWithoutRef<'button'>?
+export const Button = React.forwardRef<
+  HTMLButtonElement,
+  React.ComponentPropsWithoutRef<"button">
+>(({ children, ...rest }: ButtonProps, ref) => (
+  <ButtonStyles ref={ref} {...rest}>
+    {children}
+  </ButtonStyles>
+));
 
-export const Button = ({ children, ...rest }: ButtonProps) => (
-  <ButtonStyles {...rest}>{children}</ButtonStyles>
-);
+Button.displayName = "Button";

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, CarouselView, ViewPort } from "./partials";
+import { Button, CarouselContent, ViewPort } from "./partials";
 
 export interface CarouselProps {
   /**
@@ -49,7 +49,9 @@ export const Carousel = ({
 
   return (
     <ViewPort className="viewport" width={width} height={height}>
-      <CarouselView ref={carouselViewRef}>{children}</CarouselView>
+      <CarouselContent className="carousel-content" ref={carouselViewRef}>
+        {children}
+      </CarouselContent>
       <Button onClick={moveBy} aria-label="previous"></Button>
       <Button onClick={moveBy} aria-label="next"></Button>
     </ViewPort>

@@ -33,7 +33,11 @@ import { Button } from "@/fitfab/Button";
     name="Secondary"
     args={{ children: "Secondary button", variant: "secondary" }}
   >
-    {(args) => <Button {...args}>{args.children}</Button>}
+    {(args) => (
+      <Button className="myButton" {...args}>
+        {args.children}
+      </Button>
+    )}
   </Story>
 </Canvas>
 

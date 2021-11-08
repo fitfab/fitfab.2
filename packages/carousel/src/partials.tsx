@@ -46,7 +46,7 @@ export const Button = styled.button`
     filter: drop-shadow(0 0 0.1rem rgb(0, 0, 0, 0.3));
   }
 `;
-export const CarouselView = styled.div<CarouselProps>`
+export const CarouselContent = styled.div<CarouselProps>`
   display: flex;
   height: 100%;
   margin: 0 auto;
