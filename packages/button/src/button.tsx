@@ -12,26 +12,28 @@ export interface ButtonProps {
   variant?: "primary" | "secondary";
 }
 const ButtonStyles = styled.button<ButtonProps>`
-  background-color: ${(props) =>
-    props.variant === "primary" ? "#212121" : "#979797"};
+  background-color: ${({ variant, theme }) =>
+    variant === "primary" ? theme.colors.dark : theme.colors.gray75};
   color: #fff;
+  font-family: inherit;
   font-size: 1rem;
   padding: 9px 24px;
   border: none;
   border-radius: 32px;
   cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   transition: all 0.3s ease-in;
   outline-offset: 1px;
   outline: 1px solid
-    ${(props) => (props.variant === "primary" ? "#212121" : "#979797")};
+    ${({ theme, variant }) =>
+      variant === "primary" ? theme.colors.dark : theme.colors.gray75};
   &:hover {
-    background-color: ${(props) =>
-      props.variant === "primary" ? "#ff4158" : "#333"};
+    background-color: ${({ theme, variant }) =>
+      variant === "primary" ? theme.colors.brand : theme.colors.gray50};
     outline: 4px solid
-      ${(props) =>
-        props.variant === "primary"
-          ? "rgba(258, 65, 106, 0.3)"
-          : "rgba(0, 0, 0, 0.3)"};
+      ${({ theme, variant }) =>
+        variant === "primary" ? theme.colors.brand25 : theme.colors.gray25};
   }
 `;
 // NOTE: do i need React.componentPropsWithoutRef<'button'>?

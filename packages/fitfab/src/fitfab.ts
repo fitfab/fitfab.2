@@ -4,3 +4,4 @@
  */
 export * from "@fitfab/button/dist/button";
 export * from "@fitfab/carousel/dist/carousel";
+export * from "./styles";
