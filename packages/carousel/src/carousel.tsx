@@ -23,27 +23,23 @@ export const Carousel = ({
 }: CarouselProps) => {
   const carouselViewRef = React.useRef<HTMLDivElement>(null);
   const scrollby = React.useRef(0);
-  const [postion, setPosition] = React.useState({ x: 0 });
+  const [position, setPosition] = React.useState({ x: 0 });
 
   React.useLayoutEffect(() => {
-    const clientWidth = carouselViewRef.current?.clientWidth || 0;
-    scrollby.current = (clientWidth * 55) / 100;
+    scrollby.current = carouselViewRef.current?.clientWidth! * 0.4;
     carouselViewRef!.current!.scrollBy!({
       behavior: "smooth",
-      left: postion.x,
+      left: position.x,
     });
-  }, [postion]);
-
-  const direction = (clientX: number) => {
-    return window.innerWidth / 2 > clientX
-      ? -scrollby.current
-      : scrollby.current;
-  };
+  }, [position]);
 
   const moveBy = (e: React.MouseEvent<HTMLElement>) => {
     e.persist();
     setPosition({
-      x: direction(e.clientX),
+      x:
+        window.innerWidth / 2 > e.clientX
+          ? -scrollby.current
+          : scrollby.current,
     });
   };
 
