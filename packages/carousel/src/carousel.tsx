@@ -33,7 +33,7 @@ export const Carousel = ({
     });
   }, [position]);
 
-  const moveBy = (e: React.MouseEvent<HTMLElement>) => {
+  const shift = (e: React.MouseEvent<HTMLElement>) => {
     e.persist();
     setPosition({
       x:
@@ -48,8 +48,8 @@ export const Carousel = ({
       <CarouselContent className="carousel-content" ref={carouselViewRef}>
         {children}
       </CarouselContent>
-      <Button onClick={moveBy} aria-label="previous"></Button>
-      <Button onClick={moveBy} aria-label="next"></Button>
+      <Button onClick={shift} aria-label="previous"></Button>
+      <Button onClick={shift} aria-label="next"></Button>
     </ViewPort>
   );
 };
