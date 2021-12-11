@@ -14,19 +14,27 @@ export interface CarouselProps {
    * The height of the carousel default to 320px
    */
   height?: string;
+
+  /**
+   * gap -- the space between each slides and
+   * it should be in any we unit (px, %, em, rem, ...)
+   * default to 16px
+   */
+  gap?: string;
 }
 
 export const Carousel = ({
   children = "Place content here",
   width = "100%",
   height = "320px",
+  gap = "16px",
 }: CarouselProps) => {
   const carouselViewRef = React.useRef<HTMLDivElement>(null);
-  const scrollby = React.useRef(0);
+  const scrollAmount = React.useRef(0);
   const [position, setPosition] = React.useState({ x: 0 });
 
   React.useLayoutEffect(() => {
-    scrollby.current = carouselViewRef.current?.clientWidth! * 0.4;
+    scrollAmount.current = carouselViewRef.current?.clientWidth! * 0.4;
     carouselViewRef!.current!.scrollBy!({
       behavior: "smooth",
       left: position.x,
@@ -38,14 +46,17 @@ export const Carousel = ({
     setPosition({
       x:
         window.innerWidth / 2 > e.clientX
-          ? -scrollby.current
-          : scrollby.current,
+          ? -scrollAmount.current
+          : scrollAmount.current,
     });
   };
-
   return (
     <ViewPort className="viewport" width={width} height={height}>
-      <CarouselContent className="carousel-content" ref={carouselViewRef}>
+      <CarouselContent
+        className="carousel-content"
+        ref={carouselViewRef}
+        gap={gap}
+      >
         {children}
       </CarouselContent>
       <Button onClick={shift} aria-label="previous"></Button>

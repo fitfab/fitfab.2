@@ -1,4 +1,4 @@
-export default [
+export const data = [
   {
     src: "https://source.unsplash.com/random/480x320",
     alt: "This is an image",
@@ -17,7 +17,7 @@ export default [
   },
   {
     src: "https://source.unsplash.com/780x320?city",
-    alt: "This is an image",
+    alt: "fixedwidth",
     caption:
       "Em eratemquam ut offi cium eos elignimusam latur. Conestrum necae di dio eiusapis si sus.it millaciis asit quodit ea voluptat.",
     width: "780px",
@@ -57,10 +57,29 @@ export default [
   },
   {
     src: "https://source.unsplash.com/collection/190727/780x320",
-    alt: "This is an image",
+    alt: "fixedwidth",
+    caption:
+      "Em eratemquam ut offi cium eos elignimusam latur. Conestrum necae di dio eiusapis si sus.it millaciis asit quodit ea voluptat.",
+    width: "780px",
+    height: "320px",
+  },
+
+  {
+    src: "https://source.unsplash.com/collection/190725/780x320",
+    alt: "fixedwidth",
+    caption:
+      "Em eratemquam ut offi cium eos elignimusam latur. Conestrum necae di dio eiusapis si sus.it millaciis asit quodit ea voluptat.",
+    width: "780px",
+    height: "320px",
+  },
+  {
+    src: "https://source.unsplash.com/collection/190726/780x320",
+    alt: "fixedwidth",
     caption:
       "Em eratemquam ut offi cium eos elignimusam latur. Conestrum necae di dio eiusapis si sus.it millaciis asit quodit ea voluptat.",
     width: "780px",
     height: "320px",
   },
 ];
+
+export const fixedwidth = data.filter((item) => item.width === "780px");

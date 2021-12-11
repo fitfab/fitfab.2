@@ -2,17 +2,17 @@ import styled from "styled-components";
 import { CarouselProps } from "./carousel";
 
 export const Button = styled.button`
-  background: rgba(255, 255, 255, 1);
-  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+  color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
   border: none;
-  border-radius: 55% 0% 55% 0%;
-  display: inline-block;
+  border-radius: 100%;
+  display: block;
   position: absolute;
   top: 50%;
-  left: -32px;
+  left: 8px;
+  transition: all 0.3s ease;
   transform: translateY(-50%) rotate(135deg);
-  filter: drop-shadow(0 0 0.1rem rgb(0, 0, 0, 0.3));
 
   height: 56px;
   width: 56px;
@@ -20,30 +20,32 @@ export const Button = styled.button`
   &:before {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 72%;
+    left: 72%;
     transform: translate(-120%, -120%) rotate(0deg);
-    height: 12px;
-    width: 12px;
+    height: 24px;
+    width: 24px;
 
-    border-bottom: 1px solid #9c9c9c;
-    border-right: 1px solid #9c9c9c;
-    border-radius: 1px;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.white};
+    border-right: 1px solid ${({ theme }) => theme.colors.white};
   }
 
   &:last-child {
     left: auto;
-    right: -32px;
+    right: 8px;
 
     &:before {
+      top: 28%;
+      left: 28%;
       border-bottom: none;
-      border-top: 1px solid #9c9c9c;
+      border-top: 1px solid ${({ theme }) => theme.colors.white};
       transform: translate(20%, 20%) rotate(-90deg);
     }
   }
 
   &:hover {
-    filter: drop-shadow(0 0 0.1rem rgb(0, 0, 0, 0.3));
+    background: rgba(0, 0, 0, 0.4);
+    transform: scale(1.1) translateY(-46%) rotate(135deg);
   }
 `;
 export const CarouselContent = styled.div<CarouselProps>`
@@ -58,8 +60,8 @@ export const CarouselContent = styled.div<CarouselProps>`
 
   > * {
     scroll-snap-align: center;
-    display: inline-block;
-    margin-right: 1rem;
+    display: block;
+    margin-right: ${(p) => p.gap};
     flex: none;
   }
 
