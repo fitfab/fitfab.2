@@ -366,5 +366,25 @@
       "value": "#ff3d54",
       "type": "color"
     }
+  },
+  "borderRadius": {
+    "small": {
+      "value": 4,
+      "type": "borderRadius"
+    },
+    "medium": {
+      "value": 8,
+      "type": "borderRadius"
+    }
+  },
+  "border": {
+    "small": {
+      "value": 1,
+      "type": "borderWidth"
+    },
+    "medium": {
+      "value": 2,
+      "type": "borderWidth"
+    }
   }
 }
