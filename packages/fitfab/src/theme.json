@@ -1,4 +1,19 @@
 {
+  "link": {
+    "default": {
+      "value": "#000000",
+      "description": "default linkt",
+      "type": "color"
+    },
+    "hover": {
+      "value": "#ff3d54",
+      "type": "color"
+    },
+    "active": {
+      "value": "#0066FF",
+      "type": "color"
+    }
+  },
   "fontFamilies": {
     "montserrat": {
       "value": "Montserrat",
@@ -350,20 +365,6 @@
     },
     "scale_80": {
       "value": "#f6f6f6",
-      "type": "color"
-    }
-  },
-  "Button": {
-    "background": {
-      "value": "#000000",
-      "type": "color"
-    },
-    "forground": {
-      "value": "#ffffff",
-      "type": "color"
-    },
-    "hover": {
-      "value": "#ff3d54",
       "type": "color"
     }
   },
