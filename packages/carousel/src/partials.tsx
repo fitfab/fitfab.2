@@ -2,50 +2,51 @@ import styled from "styled-components";
 import { CarouselProps } from "./carousel";
 
 export const Button = styled.button`
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 1);
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
-  border: none;
+  border: 1px solid #9e9e9e;
   border-radius: 100%;
-  display: block;
+  display: flex;
   position: absolute;
-  top: 50%;
-  left: 8px;
-  transition: all 0.3s ease;
-  transform: translateY(-50%) rotate(135deg);
+  top: calc(83% - 36px);
+  left: calc(100% - 88px);
+  transition: all 0.5s ease;
+  height: 36px;
+  width: 36px;
+  outline: 2px solid #fff;
 
+  &:last-child {
+    left: auto;
+    right: 0px;
+  }
+
+  & > svg {
+    width: 32px;
+    height: 32px;
+    stroke: #9e9e9e;
+  }
+  &:hover {
+    border-color: #000;
+  }
+  &:hover > svg {
+    transition: all 0.3s ease-in;
+    stroke: #000;
+  }
+`;
+
+export const Navigation = styled.div`
+  position: relative;
   height: 56px;
-  width: 56px;
 
   &:before {
     content: "";
     position: absolute;
-    top: 72%;
-    left: 72%;
-    transform: translate(-120%, -120%) rotate(0deg);
-    height: 24px;
-    width: 24px;
-
-    border-bottom: 1px solid ${({ theme }) => theme.colors.white};
-    border-right: 1px solid ${({ theme }) => theme.colors.white};
-  }
-
-  &:last-child {
-    left: auto;
-    right: 8px;
-
-    &:before {
-      top: 28%;
-      left: 28%;
-      border-bottom: none;
-      border-top: 1px solid ${({ theme }) => theme.colors.white};
-      transform: translate(20%, 20%) rotate(-90deg);
-    }
-  }
-
-  &:hover {
-    background: rgba(0, 0, 0, 0.4);
-    transform: scale(1.1) translateY(-46%) rotate(135deg);
+    top: calc(50% - 1px);
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #9e9e9e;
   }
 `;
 export const CarouselContent = styled.div<CarouselProps>`
@@ -53,13 +54,12 @@ export const CarouselContent = styled.div<CarouselProps>`
   height: 100%;
   margin: 0 auto;
   overflow-x: scroll;
+  overflow-y: hidden;
   padding: 0 0 16px 0;
   scroll-snap-type: x mandatory;
-  transform: translate3d(0, 0, 0); /* force the GPU */
-  transition: all 0.3s ease-in-out;
-
+  scroll-behavior: smooth;
   > * {
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     display: block;
     margin-right: ${(p) => p.gap};
     flex: none;
@@ -73,6 +73,6 @@ export const ViewPort = styled.div<CarouselProps>`
   width: ${(p) => p.width};
   height: ${(p) => p.height};
   margin: auto;
-  overflow: hidden;
   position: relative;
+  transition: all 0.5s ease;
 `;

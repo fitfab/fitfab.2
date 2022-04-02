@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, CarouselContent, ViewPort } from "./partials";
+import { Button, Navigation, CarouselContent, ViewPort } from "./partials";
 
 export interface CarouselProps {
   /**
@@ -34,7 +34,7 @@ export const Carousel = ({
   const [position, setPosition] = React.useState({ x: 0 });
 
   React.useLayoutEffect(() => {
-    scrollAmount.current = carouselViewRef.current?.clientWidth! * 0.4;
+    scrollAmount.current = carouselViewRef.current?.clientWidth! * 0.8;
     carouselViewRef!.current!.scrollBy!({
       behavior: "smooth",
       left: position.x,
@@ -45,7 +45,7 @@ export const Carousel = ({
     e.persist();
     setPosition({
       x:
-        window.innerWidth / 2 > e.clientX
+        e.currentTarget.dataset.direction === "prev"
           ? -scrollAmount.current
           : scrollAmount.current,
     });
@@ -59,8 +59,36 @@ export const Carousel = ({
       >
         {children}
       </CarouselContent>
-      <Button onClick={shift} aria-label="previous"></Button>
-      <Button onClick={shift} aria-label="next"></Button>
+      <Navigation>
+        <Button onClick={shift} aria-label="previous" data-direction="prev">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </Button>
+        <Button onClick={shift} aria-label="next" data-direction="next">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </Button>
+      </Navigation>
     </ViewPort>
   );
 };

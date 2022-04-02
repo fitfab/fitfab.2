@@ -10,13 +10,15 @@ The default Carousel render at **100% width**, **height at 320px** and **16px ga
 
 <Canvas>
   <Story name="Default">
-    <Carousel>
-      {data.map((item, index) => (
-        <div key={index}>
-          <img src={item.src} alt={item.alt} width={item.width} />
-        </div>
-      ))}
-    </Carousel>
+    <div style={{ margin: "40px auto", width: "100%", maxWidth: "1312px" }}>
+      <Carousel>
+        {data.map((item, index) => (
+          <div key={index}>
+            <img src={item.src} alt={item.alt} width={item.width} />
+          </div>
+        ))}
+      </Carousel>
+    </div>
   </Story>
 </Canvas>
 
