@@ -13,7 +13,7 @@ The default Carousel render at **100% width**, **height at 320px** and **16px ga
     <div style={{ margin: "40px auto", width: "100%", maxWidth: "1312px" }}>
       <Carousel>
         {data.map((item, index) => (
-          <div key={index}>
+          <div key={index} data-slide={index}>
             <img src={item.src} alt={item.alt} width={item.width} />
           </div>
         ))}
@@ -30,7 +30,7 @@ The Carousel render with **780px width**, the default **height at 320px** and **
   <Story name="Custom width">
     <Carousel width="780px" gap="0px">
       {fixedwidth.map((item, index) => (
-        <div key={index}>
+        <div key={index} data-slide={index}>
           <img src={item.src} alt={item.alt} width={item.width} />
         </div>
       ))}

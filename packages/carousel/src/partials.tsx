@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { CarouselProps } from "./carousel";
 
 export const Button = styled.button`
-  background: rgba(255, 255, 255, 1);
+  background: #000;
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
-  border: 1px solid #9e9e9e;
+  border: 1px solid #000;
   border-radius: 100%;
   display: flex;
   position: absolute;
@@ -14,7 +14,16 @@ export const Button = styled.button`
   transition: all 0.5s ease;
   height: 36px;
   width: 36px;
-  outline: 2px solid #fff;
+
+  &:disabled {
+    cursor: default;
+    background: #fff;
+    border: 1px solid #9e9e9e;
+  }
+  &:disabled > svg {
+    transition: all 0.3s ease-in;
+    stroke: #9e9e9e;
+  }
 
   &:last-child {
     left: auto;
@@ -24,14 +33,16 @@ export const Button = styled.button`
   & > svg {
     width: 32px;
     height: 32px;
-    stroke: #9e9e9e;
+    stroke: #fff;
   }
-  &:hover {
+
+  &:enabled:hover {
     border-color: #000;
   }
-  &:hover > svg {
+
+  &:enabled:hover > svg {
     transition: all 0.3s ease-in;
-    stroke: #000;
+    stroke: #fff;
   }
 `;
 

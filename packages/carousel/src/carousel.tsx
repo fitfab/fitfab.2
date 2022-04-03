@@ -29,16 +29,65 @@ export const Carousel = ({
   height = "320px",
   gap = "16px",
 }: CarouselProps) => {
+  const [position, setPosition] = React.useState({ x: 0 });
+  const [isLastItem, setIsLastItem] = React.useState(false);
+  const [isFirstItem, setIsFirstItem] = React.useState(true);
   const carouselViewRef = React.useRef<HTMLDivElement>(null);
   const scrollAmount = React.useRef(0);
-  const [position, setPosition] = React.useState({ x: 0 });
+  const init = React.useRef(false);
+  const observer = React.useRef<IntersectionObserver | null>(null);
+
+  let options = {
+    root: carouselViewRef.current,
+    threshold: 1,
+  };
+
+  function initiliaze() {
+    let options = {
+      root: carouselViewRef.current,
+      threshold: 0.1,
+    };
+    init.current = true;
+    scrollAmount.current = carouselViewRef.current?.clientWidth! * 0.8;
+
+    observer.current = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.getAttribute("data-slide") === "0"
+            ? setIsFirstItem(true)
+            : setIsLastItem(true);
+        } else {
+          entry.target.getAttribute("data-slide") === "0"
+            ? setIsFirstItem(false)
+            : setIsLastItem(false);
+        }
+      });
+    }, options);
+
+    observer.current.observe(carouselViewRef.current!.children[0]);
+    observer.current.observe(
+      carouselViewRef.current!.children[
+        carouselViewRef.current!.children.length - 1
+      ]
+    );
+  }
 
   React.useLayoutEffect(() => {
-    scrollAmount.current = carouselViewRef.current?.clientWidth! * 0.8;
+    if (!init.current) {
+      initiliaze();
+      return;
+    }
     carouselViewRef!.current!.scrollBy!({
       behavior: "smooth",
       left: position.x,
     });
+
+    console.log(observer.current);
+
+    return () => {
+      console.log("unmount");
+      // observer.current!.disconnect();
+    };
   }, [position]);
 
   const shift = (e: React.MouseEvent<HTMLElement>) => {
@@ -50,6 +99,7 @@ export const Carousel = ({
           : scrollAmount.current,
     });
   };
+  console.log("render");
   return (
     <ViewPort className="viewport" width={width} height={height}>
       <CarouselContent
@@ -60,7 +110,12 @@ export const Carousel = ({
         {children}
       </CarouselContent>
       <Navigation>
-        <Button onClick={shift} aria-label="previous" data-direction="prev">
+        <Button
+          onClick={shift}
+          aria-label="previous"
+          data-direction="prev"
+          disabled={isFirstItem}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -74,7 +129,12 @@ export const Carousel = ({
             />
           </svg>
         </Button>
-        <Button onClick={shift} aria-label="next" data-direction="next">
+        <Button
+          onClick={shift}
+          aria-label="next"
+          data-direction="next"
+          disabled={isLastItem}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
