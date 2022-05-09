@@ -2,27 +2,27 @@ import styled from "styled-components";
 import { CarouselProps } from "./carousel";
 
 export const Button = styled.button`
-  background: #000;
+  background: #fff;
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
-  border: 1px solid #000;
+  border: 1px solid #777;
   border-radius: 100%;
   display: flex;
   position: absolute;
   top: calc(83% - 36px);
   left: calc(100% - 88px);
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in;
   height: 36px;
   width: 36px;
 
   &:disabled {
     cursor: default;
     background: #fff;
-    border: 1px solid #9e9e9e;
+    border: 1px solid #d1d1d1;
   }
   &:disabled > svg {
     transition: all 0.3s ease-in;
-    stroke: #9e9e9e;
+    stroke: #d1d1d1;
   }
 
   &:last-child {
@@ -33,32 +33,13 @@ export const Button = styled.button`
   & > svg {
     width: 32px;
     height: 32px;
-    stroke: #fff;
-  }
-
-  &:enabled:hover {
-    border-color: #000;
-  }
-
-  &:enabled:hover > svg {
-    transition: all 0.3s ease-in;
-    stroke: #fff;
+    stroke: #777;
   }
 `;
 
 export const Navigation = styled.div`
   position: relative;
   height: 56px;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: calc(50% - 1px);
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: #9e9e9e;
-  }
 `;
 export const CarouselContent = styled.div<CarouselProps>`
   display: flex;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Navigation, CarouselContent, ViewPort } from "./partials";
 
-export interface CarouselProps {
+export interface CarouselProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
    *  A string | React node to be rendered as the carousel's content
    */
@@ -48,7 +48,7 @@ export const Carousel = ({
       threshold: 0.1,
     };
     init.current = true;
-    scrollAmount.current = carouselViewRef.current?.clientWidth! * 0.8;
+    scrollAmount.current = carouselViewRef.current?.clientWidth! * 0.9;
 
     observer.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -81,13 +81,6 @@ export const Carousel = ({
       behavior: "smooth",
       left: position.x,
     });
-
-    console.log(observer.current);
-
-    return () => {
-      console.log("unmount");
-      // observer.current!.disconnect();
-    };
   }, [position]);
 
   const shift = (e: React.MouseEvent<HTMLElement>) => {
@@ -99,7 +92,7 @@ export const Carousel = ({
           : scrollAmount.current,
     });
   };
-  console.log("render");
+
   return (
     <ViewPort className="viewport" width={width} height={height}>
       <CarouselContent
